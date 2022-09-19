@@ -1,0 +1,16 @@
+# import modules
+from playsound import playsound
+import datetime
+
+alarmH = int(input("Enter Hour: "))
+alarmM = int(input("Enter Minutes: "))
+alarmAMP = input("am / pm: ")
+
+if alarmAMP == "pm":
+    alarmH += 12
+
+while True:
+    if alarmH == datetime.datetime.now().hour and alarmM == datetime.datetime.now().minute:
+        print("Playing ...")
+        playsound("alarm.mp3")
+        break
